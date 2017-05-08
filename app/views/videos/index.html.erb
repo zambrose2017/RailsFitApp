@@ -1,0 +1,6 @@
+<h1> Exercise Video Library</h1>
+ <% @video_items.each do |video_item| %>
+  <p> <%= video_item.title %> </p>
+  <p> <%= video_item.body %> </p>
+  <p> <%= image_tag video_item.thumb_image %> </p>
+ <%end%>
