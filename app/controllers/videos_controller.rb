@@ -17,6 +17,25 @@ class VideosController < ApplicationController
     end
   end
 
+  def edit
+    @video_item = Video.find(params[:id])
+  end
+
+  def update
+    @video_item = Video.find(params[:id])
+    respond_to do |format|
+      if @video_item.update(params.require(:video).permit(:title, :body))
+        format.html { redirect_to videos_path, notice: 'This video log was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+  def destroy
+    
+  end
+
 
 
 
