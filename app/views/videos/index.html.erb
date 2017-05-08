@@ -2,5 +2,5 @@
  <% @video_items.each do |video_item| %>
   <p> <%= video_item.title %> </p>
   <p> <%= video_item.body %> </p>
-  <p> <%= image_tag video_item.thumb_image %> </p>
+  <p> <%= image_tag video_item.thumb_image unless video_item.thumb_image.nil? %> </p>
  <%end%>
