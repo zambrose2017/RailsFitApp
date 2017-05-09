@@ -7,4 +7,5 @@
   <p> <%= video_item.body %> </p>
   <p> <%= image_tag video_item.thumb_image unless video_item.thumb_image.nil? %> </p>
   <%= link_to "Edit", edit_video_path(video_item.id) %>
+  <%= link_to "Delete", video_path(video_item.id), method: :delete, data: {confirm: "Are you sure?"} %>
  <%end%>

@@ -36,7 +36,13 @@ class VideosController < ApplicationController
   end
 
   def destroy
+    @video_item = Video.find(params[:id])
+
+    @video_item.destroy
     
+    respond_to do |format|
+      format.html { redirect_to videos_url, notice: 'Video Post Deleted' }
+    end
   end
 
 
