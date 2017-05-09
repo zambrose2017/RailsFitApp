@@ -31,6 +31,9 @@ class VideosController < ApplicationController
       end
     end
   end
+  def show
+    @video_item = Video.find(params[:id])
+  end
 
   def destroy
     
