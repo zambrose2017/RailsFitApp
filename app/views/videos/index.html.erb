@@ -1,6 +1,10 @@
 <h1> Exercise Video Library</h1>
+
+<%= link_to "Create New Video Log", new_video_path %>
+
  <% @video_items.each do |video_item| %>
   <p> <%= video_item.title %> </p>
   <p> <%= video_item.body %> </p>
   <p> <%= image_tag video_item.thumb_image unless video_item.thumb_image.nil? %> </p>
+  <%= link_to "Edit", edit_video_path(video_item.id) %>
  <%end%>
